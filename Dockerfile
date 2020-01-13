@@ -10,9 +10,9 @@ EXPOSE 25565
 # Download and unzip minecraft files
 RUN apk update && apk add curl wget && \
     mkdir -p /minecraft/world && \
-    curl -LO https://www.curseforge.com/minecraft/modpacks/enigmatica2expert/download/2854638/file && \
-    unzip Enigmatica2ExpertServer-1.75.zip && \
-    rm Enigmatica2ExpertServer-1.75.zip
+    curl -o Enigmatica2ExpertServer.zip -L https://www.curseforge.com/minecraft/modpacks/enigmatica2expert/download/2854638/file && \
+    unzip Enigmatica2ExpertServer.zip && \
+    rm Enigmatica2ExpertServer.zip
     
 # Accept EULA
 RUN echo "# EULA accepted on $(date)" > /minecraft/eula.txt && \
