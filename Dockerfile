@@ -12,7 +12,9 @@ RUN apk update && apk add curl wget && \
     mkdir -p /minecraft/world && \
     curl -L -o Enigmatica2ExpertServer.zip https://github.com/NillerMedDild/Enigmatica2Expert/archive/1.75.zip && \
     unzip Enigmatica2ExpertServer.zip && \
-    rm Enigmatica2ExpertServer.zip
+    mv Enigmatica2Expert-1.75/* ./ && \
+    rm Enigmatica2ExpertServer.zip && \
+    rm -r Enigmatica2Expert-1.75
     
 # Accept EULA
 RUN echo "# EULA accepted on $(date)" > /minecraft/eula.txt && \
